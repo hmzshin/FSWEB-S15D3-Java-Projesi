@@ -46,13 +46,12 @@ public class Employee {
             return false;
         }
         Employee employee = (Employee) o;
-        return id == employee.id && Objects.equals(firstname, employee.firstname)
-                && Objects.equals(lastname, employee.lastname);
+        return id == employee.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstname, lastname);
+        return Objects.hash(id);
     }
 
     @Override
