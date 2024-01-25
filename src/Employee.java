@@ -56,10 +56,10 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "{" +
-                " id='" + getId() + "'" +
-                ", firstname='" + getFirstname() + "'" +
-                ", lastname='" + getLastname() + "'" +
+        return "{" + "\n" +
+                " id='" + getId() + "," + "\n" +
+                "firstname='" + getFirstname() + "," + "\n" +
+                "lastname='" + getLastname() + "," + "\n" +
                 "}";
     }
 
