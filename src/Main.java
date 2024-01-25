@@ -1,5 +1,4 @@
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,7 +18,39 @@ public class Main {
         employees.add(employee5);
         employees.add(employee6);
 
-        System.out.println(employees);
+        Set<Employee> uniqueEmployees = new HashSet<>(employees);
+        Set<Employee> doubleEmployees = new LinkedHashSet<>();
+        for (int i = 0; i < employees.size() - 1; i++) {
+            for (int j = i + 1; j < employees.size(); j++) {
+                if (employees.get(i).equals(employees.get(j))) {
+                    doubleEmployees.add(employees.get(i));
+                }
+
+            }
+        }
+        System.out.println("***************************** double employees***********");
+        System.out.println(doubleEmployees);
+
+        Map<Integer, Employee> newEmployeeMap = new HashMap<>();
+
+        for (Employee employee : uniqueEmployees) {
+            newEmployeeMap.put(employee.getId(), employee);
+
+        }
+        System.out.println("****************Map list*****************");
+        System.out.println(newEmployeeMap);
+
+        System.out.println("**************Remove repetitive items***********");
+        List<Employee> newEmployeeList = new ArrayList<>();
+
+        for (Employee person : employees) {
+            if (!newEmployeeList.contains(person)) {
+                newEmployeeList.add(person);
+            }
+        }
+
+        System.out.println(newEmployeeList);
+
 
     }
 }
